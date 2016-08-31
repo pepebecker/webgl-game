@@ -1,0 +1,26 @@
+{
+  "name": "webgl-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchify src/index.js -p [ browserify-livereload --host 127.0.0.1 --port 1337 ] -o bundle.js -v",
+    "release": "browserify src/index.js -t [ babelify --presets [ es2015 ] ] -d -t uglifyify | exorcist bundle.js.map > bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pepe Becker <mail@pepebecker.com>",
+  "license": "ISC",
+  "dependencies": {
+    "gl-matrix": "^2.3.2",
+    "regl": "^0.11.0",
+    "resl": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browserify-livereload": "^1.0.8",
+    "exorcist": "^0.4.0",
+    "uglifyify": "^3.0.2",
+    "watchify": "^3.7.0"
+  }
+}
